@@ -1,0 +1,192 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f9dce9, #ded9ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 900px;
+    min-height: 520px;
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 15px 40px rgba(100, 80, 120, 0.18);
+}
+
+/* bagian kiri */
+
+.left {
+    width: 38%;
+    padding: 50px 40px;
+    background: linear-gradient(145deg, #c58bc4, #8e8bd5);
+    color: white;
+    position: relative;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+
+.left h1 {
+    font-size: 42px;
+    line-height: 1.1;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.left p {
+    line-height: 1.7;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.hiasan {
+    position: absolute;
+    bottom: 35px;
+    display: flex;
+    gap: 18px;
+    font-size: 25px;
+}
+
+/* bagian form */
+
+.right {
+    width: 62%;
+    padding: 45px;
+}
+
+h2 {
+    margin: 0;
+    
+    font-size: 28px;
+}
+
+.sub {
+    color: #999;
+    margin-top: 8px;
+    margin-bottom: 28px;
+    font-size: 14px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.input-box.full {
+    grid-column: span 2;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #514658;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    outline: none;
+    background: #fafafa;
+}
+
+input:focus,
+select:focus {
+    border-color: #a48bd0;
+    background: white;
+}
+
+small {
+    color: #e25b67;
+    font-size: 11px;
+}
+
+input.valid,
+select.valid {
+    border: 2px solid #62b884;
+}
+
+input.invalid,
+select.invalid {
+    border: 2px solid #e25b67;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 13px;
+    margin-top: 22px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #c58bc4, #8e8bd5);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+#pesan {
+    text-align: center;
+    color: #4caf78;
+    font-weight: bold;
+}
+
+/* HP */
+
+@media (max-width: 700px) {
+    .card {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+    }
+
+    .left {
+        padding: 30px;
+    }
+
+    .left h1 {
+        margin-top: 30px;
+        font-size: 35px;
+    }
+
+    .right {
+        padding: 30px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .input-box.full {
+        grid-column: span 1;
+    }
+}
