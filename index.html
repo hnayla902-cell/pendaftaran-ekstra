@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daftar Ekstrakurikuler</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="layout">
+  <section class="intro">
+    <p class="badge">Pendaftaran anggota baru</p>
+    <h1>Temukan tim yang membuatmu betah di sekolah.</h1>
+    <p class="lead">Isi formulir, pilih ekstrakurikuler, dan kami hubungi lewat email.</p>
+    <ul class="chips" aria-label="Ekstrakurikuler tersedia">
+            <li>Pramuka</li>
+            <li>Paskibra</li>
+            <li>Osis</li>
+            <li>PMR</li>
+            <li>Rohis</li>
+            <li>Paduan suara</li>
+            <li>Bahasa Jepang</li>
+            <li>Pencak Silat</li>
+            <li>Drumband</li>
+            <li>Rebana</li>
+            <li>Tari</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Buat akunmu</h2>
+    <form id="regForm" novalidate>
+      <div class="field">
+        <label for="nama">Nama lengkap</label>
+        <input type="text" id="nama" name="nama" placeholder="Contoh: Sekar Ayu Pertiwi" autocomplete="name">
+        <small class="msg" aria-live="polite"></small>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@email.com" autocomplete="email">
+        <small class="msg" aria-live="polite"></small>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="pw">
+            <input type="password" id="password" name="password" placeholder="Minimal 8 karakter" autocomplete="new-password">
+            <button type="button" class="eye" data-target="password" aria-label="Tampilkan password">👁</button>
+          </div>
+          <div class="meter"><span id="meterBar"></span></div>
+          <small class="msg" aria-live="polite"></small>
+        </div>
+        <div class="field">
+          <label for="konfirmasi">Konfirmasi password</label>
+          <div class="pw">
+            <input type="password" id="konfirmasi" name="konfirmasi" placeholder="Ulangi password" autocomplete="new-password">
+            <button type="button" class="eye" data-target="konfirmasi" aria-label="Tampilkan konfirmasi password">👁</button>
+          </div>
+          <small class="msg" aria-live="polite"></small>
+        </div>
+      </div>
+      <div class="field">
+        <label for="ekskul">Pilihan ekstrakurikuler</label>
+        <select id="ekskul" name="ekskul">
+          <option value="">Pilih salah satu</option>
+                        <option value="Pramuka">Pramuka</option>
+                        <option value="Paskibra">Paskibra</option>
+                        <option value="Osis">Osis</option>
+                        <option value="PMR">PMR</option>
+                        <option value="Rohis">Rohis</option>
+                        <option value="PaduanSuara">Paduan suara</option>
+                        <option value="Jurnalis">Jurnalis</option>
+                        <option value="BahasaJepang">Bahasa Jepang</option>
+                        <option value="PencakSilat">Pencak Silat</option>
+                        <option value="Drumband">Drumband</option>
+                        <option value="Rebana">Rebana</option>
+                        <option value="Tari">Tari</option>
+        </select>
+        <small class="msg" aria-live="polite"></small>
+      </div>
+      <button type="submit" class="submit">Daftar sekarang</button>
+      <p id="success" class="success" role="status" hidden></p>
+    </form>
+  </section>
+</main>
+
+<!-- Chatbot -->
+<button id="chatToggle" class="chat-toggle" aria-label="Buka asisten pendaftaran">💬</button>
+<aside id="chatBox" class="chatbox" hidden aria-label="Asisten pendaftaran">
+  <header><strong>Asisten Daftar</strong><button id="chatClose" aria-label="Tutup">✕</button></header>
+  <div id="chatLog" class="chat-log" aria-live="polite"></div>
+  <div id="quick" class="quick"></div>
+  <form id="chatForm" class="chat-form">
+    <input id="chatInput" type="text" placeholder="Tanya sesuatu..." autocomplete="off">
+    <button type="submit" aria-label="Kirim">➤</button>
+  </form>
+</aside>
+<script src="script.js"></script>
+</body>
+</html>
